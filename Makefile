@@ -13,7 +13,8 @@ CC = g++
 
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)/
 
-OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/matriz.o
+OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/matriz.o $(OBJ_DIR)/fileHandler.o
+
 
 RM = rm -rf
 
@@ -28,15 +29,20 @@ $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 $(OBJ_DIR)/matriz.o: $(SRC_DIR)/matriz.cpp $(INC_DIR)/matriz.h
 	$(CC) -c $(CPPFLAGS) $< -o $@
 
+$(OBJ_DIR)/fileHandler.o: $(SRC_DIR)/fileHandler.cpp
+	$(CC) -c $(CPPFLAGS) $^ -o $@
+
 dir:
-	mkdir bin
-	mkdir build
-	mkdir data
-	mkdir include
-	mkdir src
-	mkdir doc
-	mkdir lib
-	mkdir test
+	mkdir -p bin
+	mkdir -p build
+	mkdir -p data
+	mkdir -p data/input
+	mkdir -p data/output	
+	mkdir -p include
+	mkdir -p src
+	mkdir -p doc
+	mkdir -p lib
+	mkdir -p test
 
 doxy:
 	$(RM) $(DOC_DIR)/*
