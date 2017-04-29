@@ -57,6 +57,15 @@ int main(int argc, char* argv[]) {
 	int n = headerCheck(file, atoi(argv[1]));
 	int **A = malloc(n);
 	makeMatrix(file, A, n);
+
+	arqDir = "data/output/A" + arg + "x" + arg + ".txt";
+	ofstream output(arqDir);
+	if (!output) {
+		cerr << "Erro ao criar arquivo de saída" << endl;
+		return 1;
+	}
+
+
 	//char *arqDir = new char[18+(getSize(argv[2])*2)];
 
 	return 0;

@@ -49,5 +49,5 @@ doxy:
 	doxygen Doxyfile
 
 clean:
-	$(RM) $(OBJ_DIR)/* $(OBJ_DIR)/*
+	$(RM) $(OBJ_DIR)/*
 	$(RM) $(BIN_DIR)/*

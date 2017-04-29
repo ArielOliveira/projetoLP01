@@ -41,3 +41,11 @@ void makeMatrix(ifstream &file, int** v, int n) {
 	}
 }
 
+void writeFile(ofstream &output, int** v, int n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			output << v[i][j] << " ";
+		}
+		output << endl;
+	}
+}
