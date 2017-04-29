@@ -7,23 +7,57 @@
 
 #include "matriz.h"
 #include <iostream>
+using std::cerr;
+using std::cout;
+using std::endl;
 
 /** @brief Aloca os espaços da matriz dinamicamente 
 * @param n Tamanho da Matriz Quadrada
 * @return Matriz Alocada
 */
+int **AlocMatriz(int n) {
+	int **matrix = new int*[n];
+	if (!matrix) {
+		cerr << "Memória insuficiente" << endl;
+		exit(1);
+	}
+	for (int i = 0; i < n; i++) {
+		matrix[i] = new int[n];
+		if (matrix[i] == NULL) {
+				cerr << "Memória insuficiente" << endl;
+				exit(1);
+			}			
+	} 
+	return matrix;
+}
 
-int **AlocMatriz(int n)
+void deleteMatrix(int **v, int n) {
+	for (int i = 0; i < n; i++) {
+		delete[] v[i];
+	}
+	delete[] v;
+}
+
+/** @brief Soma de duas matrizes
+* @param M1 Matriz de entrada
+* @param M2 Matriz de entrada
+* @param n Tamanho das matrizes
+* @return Matriz resultante da soma
+*/
+int **SomaM(int **M1, int **M2, int n)
 {
-	int **M = new int*[n];
-	int i;
-	
-	for (i = 0; i < n; i++)
+	int i,j;
+	int **M3 = AlocMatriz(n);
+
+	for(i = 0; i < n; i++)
 	{
-		M[i] = new int[n];
+		for(j = 0; j < n; j++)
+		{
+			M3[i][j] = M1[i][j] + M2[i][j];
+		}
 	}
 
-	return M;
+	return M3;
 }
 
 /** @brief Multiplicação interativa das matrizes
@@ -52,28 +86,6 @@ int **MultMatrizesI(int **M1, int **M2, int m)
 			}
 		}
 	}
-	return M3;
-}
-
-/** @brief Soma de duas matrizes
-* @param M1 Matriz de entrada
-* @param M2 Matriz de entrada
-* @param n Tamanho das matrizes
-* @return Matriz resultante da soma
-*/
-int **SomaM(int **M1, int **M2, int n)
-{
-	int i,j;
-	int **M3 = AlocMatriz(n);
-
-	for(i = 0; i < n; i++)
-	{
-		for(j = 0; j < n; j++)
-		{
-			M3[i][j] = M1[i][j] + M2[i][j];
-		}
-	}
-
 	return M3;
 }
 

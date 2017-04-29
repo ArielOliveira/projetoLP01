@@ -5,37 +5,14 @@ using std::cerr;
 using std::cout;
 using std::endl;
 
-int headerCheck(ifstream &file, int n) {
+bool headerCheck(ifstream &file, int n) {
 	int x = 0;
 	for (int i = 0; i < 2; i++) {
 		file >> x;
 		file.ignore();
-		if (x != n) exit(1);
+		if (x != n) return false;
 	}
-	return x;
-}
-
-int **malloc(int n) {
-	int **matrix = new int*[n];
-	if (!matrix) {
-		cerr << "Memória insuficiente" << endl;
-		exit(1);
-	}
-	for (int i = 0; i < n; i++) {
-		matrix[i] = new int[n];
-		if (matrix[i] == NULL) {
-				cerr << "Memória insuficiente" << endl;
-				exit(1);
-			}			
-	} 
-	return matrix;
-}
-
-void deleteMatrix(int **v, int n) {
-	for (int i = 0; i < n; i++) {
-		delete[] v[i];
-	}
-	delete[] v;
+	return true;
 }
 
 void makeMatrix(ifstream &file, int **v, int n) {

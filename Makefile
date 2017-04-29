@@ -30,8 +30,8 @@ $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 $(OBJ_DIR)/matriz.o: $(SRC_DIR)/matriz.cpp $(INC_DIR)/matriz.h
 	$(CC) -c $(CPPFLAGS) $< -o $@
 
-$(OBJ_DIR)/fileHandler.o: $(SRC_DIR)/fileHandler.cpp
-	$(CC) -c $(CPPFLAGS) $^ -o $@
+$(OBJ_DIR)/fileHandler.o: $(SRC_DIR)/fileHandler.cpp $(INC_DIR)/fileHandler.h
+	$(CC) -c $(CPPFLAGS) $< -o $@
 
 dir:
 	mkdir -p bin
