@@ -12,7 +12,8 @@ int headerCheck(ifstream &file, int n) {
 		file.ignore();
 		if (x != n) exit(1);
 	}
-	
+	cout << "Arquivo carregado com sucesso!" << endl;
+	file.close();
 	return x;
 }
 
@@ -32,6 +33,13 @@ int **malloc(int n) {
 	return matrix;
 }
 
+void deleteMatrix(int **v, int n) {
+	for (int i = 0; i < n; i++) {
+		delete[] v[i];
+	}
+	delete[] v;
+}
+
 void makeMatrix(ifstream &file, int** v, int n) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -48,4 +56,6 @@ void writeFile(ofstream &output, int** v, int n) {
 		}
 		output << endl;
 	}
+	cout << "Arquivo de saída salvo com sucesso!" << endl;
+	output.close();
 }

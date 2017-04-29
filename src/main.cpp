@@ -45,28 +45,31 @@ int main(int argc, char* argv[]) {
 	for (int i = 1; i < argc; i++) {
 		if (!isPowerOfTwo(atoi(argv[i]))) errorInvalidArg();
 	}
-	string arg = argv[1];
-	string arqDir = "data/input/A" + arg + "x" + arg + ".txt";
 
-	ifstream file(arqDir);
-	if (!file) {
-		cerr << "Erro ao abrir arquivo" << endl;
-		return 1;
+	for (int count = 1; count < argc; count++) {
+		string arg = argv[count];
+		string arqDir = "data/input/A" + arg + "x" + arg + ".txt";
+		ifstream file(arqDir);
+		if (!file) {
+			cerr << "Erro ao abrir arquivo" << endl;
+			return 1;
+		}
+
+		int n = headerCheck(file, atoi(argv[count]));
+		int **A = malloc(n);
+		makeMatrix(file, A, n);
+
+		arqDir = "data/output/A" + arg + "x" + arg + ".txt";
+		ofstream output(arqDir);
+		if (!output) {
+			cerr << "Erro ao criar arquivo de saída" << endl;
+			return 1;
+		}
+
+		writeFile(output, A, n);
+		deleteMatrix(A, n);
+		//char *arqDir = new char[18+(getSize(argv[2])*2)];
 	}
-
-	int n = headerCheck(file, atoi(argv[1]));
-	int **A = malloc(n);
-	makeMatrix(file, A, n);
-
-	arqDir = "data/output/A" + arg + "x" + arg + ".txt";
-	ofstream output(arqDir);
-	if (!output) {
-		cerr << "Erro ao criar arquivo de saída" << endl;
-		return 1;
-	}
-
-
-	//char *arqDir = new char[18+(getSize(argv[2])*2)];
 
 	return 0;
 }
