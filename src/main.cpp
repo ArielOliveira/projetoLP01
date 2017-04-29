@@ -4,6 +4,10 @@ using std::cout;
 using std::endl;
 using std::string;
 
+#include <limits>
+using std::streamsize;
+using std::numeric_limits;
+
 #include <string>
 
 #include <cstdlib>
@@ -54,11 +58,15 @@ int main(int argc, char* argv[]) {
 			cerr << "Erro ao abrir arquivo" << endl;
 			return 1;
 		}
-
+		string arquivo;
 		int n = headerCheck(file, atoi(argv[count]));
 		int **A = malloc(n);
-		makeMatrix(file, A, n);
+		
+		file.clear();
+		file.seekg(0, file.beg);
+		file.ignore(numeric_limits<streamsize>::max(), '\n');
 
+		makeMatrix(file, A, n);
 		arqDir = "data/output/A" + arg + "x" + arg + ".txt";
 		ofstream output(arqDir);
 		if (!output) {

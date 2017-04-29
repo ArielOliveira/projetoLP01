@@ -12,8 +12,6 @@ int headerCheck(ifstream &file, int n) {
 		file.ignore();
 		if (x != n) exit(1);
 	}
-	cout << "Arquivo carregado com sucesso!" << endl;
-	file.close();
 	return x;
 }
 
@@ -40,13 +38,15 @@ void deleteMatrix(int **v, int n) {
 	delete[] v;
 }
 
-void makeMatrix(ifstream &file, int** v, int n) {
+void makeMatrix(ifstream &file, int **v, int n) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			file >> v[i][j];
 			file.ignore();
 		}
 	}
+	cout << "Arquivo carregado com sucesso!" << endl;
+	file.close();
 }
 
 void writeFile(ofstream &output, int** v, int n) {

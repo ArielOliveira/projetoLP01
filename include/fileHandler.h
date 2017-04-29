@@ -7,8 +7,8 @@ using std::ofstream;
 
 int headerCheck(ifstream &file, int n);
 int **malloc(int n);
-void makeMatrix(ifstream &file, int** v, int n);
+void makeMatrix(ifstream &file, int **v, int n);
 void deleteMatrix(int **v, int n);
-void writeFile(ofstream &output, int** v, int n);
+void writeFile(ofstream &output, int **v, int n);
 
 #endif

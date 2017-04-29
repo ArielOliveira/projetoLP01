@@ -7,6 +7,7 @@ INC_DIR = ./include
 SRC_DIR = ./src
 DOC_DIR = ./doc
 DATA_DIR = ./data
+OUTPUT_DIR = ./data/output
 TEST_DIR = ./test
 
 CC = g++
@@ -51,3 +52,4 @@ doxy:
 clean:
 	$(RM) $(OBJ_DIR)/*
 	$(RM) $(BIN_DIR)/*
+	$(RM) $(OUTPUT_DIR)/*
