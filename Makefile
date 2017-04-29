@@ -13,7 +13,7 @@ CC = g++
 
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)/
 
-OBJS = $(OBJ_DIR)/main.o
+OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/matriz.o
 
 RM = rm -rf
 
@@ -24,6 +24,9 @@ $(multimat): $(OBJS)
 
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 	$(CC) -c $(CPPFLAGS) $^ -o $@
+
+$(OBJ_DIR)/matriz.o: $(SRC_DIR)/matriz.cpp $(INC_DIR)/matriz.h
+	$(CC) -c $(CPPFLAGS) $< -o $@
 
 dir:
 	mkdir bin
