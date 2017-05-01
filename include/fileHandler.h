@@ -6,7 +6,6 @@ using std::ifstream;
 using std::ofstream;
 
 bool headerCheck(ifstream &file, int n);
-int **malloc(int n);
 void makeMatrix(ifstream &file, int **v, int n);
 void writeFile(ofstream &output, int **v, int n);
 

@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
 		int **B = performCreation(arqDir, n);
 
 		int **C = AlocMatriz(n);
-		C = MultMatrizesR(A, B, C, n);
+		C = MultMatrizesI(A, B, n);
 		
 		
 		arqDir = "data/output/C" + arg + "x" + arg + ".txt";
