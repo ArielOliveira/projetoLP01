@@ -1,8 +1,9 @@
 /**
 * @file matriz.cpp
 * @brief Funções interativas e recursivas para a multiplicação das matrizes
-* @autor Rodrigo Rocha Moriyama <rodrigo.oi@hotmail.com>
+* @autor Rodrigo Rocha Moriyama <rodrigo.oi@hotmail.com> && Ariel de Oliveira Corrêa <ariel.oliveira01@gmail.com>
 * @since 28/04/2017
+* @last 01/05/2017
 */
 
 #include "matriz.h"
@@ -48,10 +49,14 @@ T **MultMatrizesI(T **M1, T **M2, int m) {
 	int i,k,j;
 
 	M3 = AlocMatriz<T>(m);
-	for(i = 0; i < m; i++) {
-		for(j = 0; j < m; j++) {
+
+	for(i = 0; i < m; i++)
+	{
+		for(j = 0; j < m; j++)
+		{
 			soma = 0;
-			for(k = 0; k < m; k++) {
+			for(k = 0; k < m; k++)
+			{
 				soma = soma + (M1[i][k] * M2[k][j]);
 				M3[i][j] = soma;
 			}
@@ -77,30 +82,38 @@ T **UnirMatriz(T **M, T **M1, T **M2, T **M3, T **M4, int n) {
 	int i, j;
 	int b = 0;
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M[i][j] = M1[i][j];
 		}
 	}
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M[i][n + b] = M2[i][j];
 			b++;
 		}
 		b = 0;
 	}
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M[i + n][j] = M3[i][j];
 			b++;
 		}
 		b = 0;
 	}
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M[i + n][n + b] = M4[i][j];
 			b++;
 		}
@@ -125,30 +138,38 @@ void AtribuirSubM(T **M, T **M1, T **M2, T **M3, T **M4, int n) {
 	int i, j;
 	int b = 0;
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M1[i][j] = M[i][j];
 		}
 	}
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M2[i][j] = M[i][n + b];
 			b++;
 		}
 		b = 0;
 	}
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M3[i][j] = M[i + n][j];
 			b++;
 		}
 		b = 0;
 	}
 
-	for(i = 0; i < n; i++) {
-		for(j = 0; j < n; j++) {
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
 			M4[i][j] = M[i + n][n + b];
 			b++;
 		}
@@ -167,10 +188,13 @@ template void AtribuirSubM<int>(int **M, int **M1, int **M2, int **M3, int **M4,
 */
 template<typename T>
 T **MultMatrizesR(T **M1, T **M2, T **M3, int n) {
-	if(n == 1) {
+	if(n == 1)
+	{
 		M3[0][0] = M1[0][0] * M2[0][0];
 		return M3;
-	} else {
+	} 
+	else
+	{
 		/** @brief Sub matrizes de M1 */
 		T **M1_11 = AlocMatriz<T>(n/2);
 		T **M1_12 = AlocMatriz<T>(n/2);
