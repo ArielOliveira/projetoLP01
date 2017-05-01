@@ -98,8 +98,8 @@ int main(int argc, char* argv[]) {
 		writeFile(output, C, n);
 		
 		
-		deleteMatrix(A, n);
-		deleteMatrix(B, n);
+		DeleteMatriz(A, n);
+		DeleteMatriz(B, n);
 	}
 
 	return 0;

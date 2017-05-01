@@ -3,7 +3,7 @@
 
 int **AlocMatriz(int n);
 
-void deleteMatrix(int **v, int n);
+void DeleteMatriz(int **v, int n);
 
 int **MultMatrizesI(int **M1, int **M2, int m);
 

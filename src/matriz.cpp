@@ -31,8 +31,10 @@ int **AlocMatriz(int n) {
 	return matrix;
 }
 
-void deleteMatrix(int **v, int n) {
-	for (int i = 0; i < n; i++) {
+void DeleteMatriz(int **v, int n);
+ {
+	for (int i = 0; i < n; i++)
+	{
 		delete[] v[i];
 	}
 	delete[] v;
@@ -160,7 +162,7 @@ void AtribuirSubM(int **M, int **M1, int **M2, int **M3, int **M4, int n)
 	{
 		for(j = 0; j < n; j++)
 		{
-			M[i][j] = M1[i][j];
+			M1[i][j] = M[i][j];
 		}
 	}
 
@@ -168,7 +170,7 @@ void AtribuirSubM(int **M, int **M1, int **M2, int **M3, int **M4, int n)
 	{
 		for(j = 0; j < n; j++)
 		{
-			M[i][n + b] = M2[i][j];
+			M2[i][j] = M[i][n + b];
 			b++;
 		}
 		b = 0;
@@ -178,7 +180,7 @@ void AtribuirSubM(int **M, int **M1, int **M2, int **M3, int **M4, int n)
 	{
 		for(j = 0; j < n; j++)
 		{
-			M[i + n][j] = M3[i][j];
+			M3[i][j] = M[i + n][j];
 			b++;
 		}
 		b = 0;
@@ -188,7 +190,7 @@ void AtribuirSubM(int **M, int **M1, int **M2, int **M3, int **M4, int n)
 	{
 		for(j = 0; j < n; j++)
 		{
-			M[i + n][n + b] = M4[i][j];
+			M4[i][j] = M[i + n][n + b];
 			b++;
 		}
 		b = 0;
