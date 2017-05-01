@@ -84,12 +84,12 @@ int main(int argc, char* argv[]) {
 		string arqDir;
 		
 		arqDir = "data/input/A" + arg + "x" + arg + ".txt";
-		int **A = performCreation(arqDir, n);
+		int **A = performCreation<int>(arqDir, n);
 
 		arqDir = "data/input/B" + arg + "x" + arg + ".txt";
-		int **B = performCreation(arqDir, n);
+		int **B = performCreation<int>(arqDir, n);
 
-		int **C = AlocMatriz(n);
+		int **C = AlocMatriz<int>(n);
 		C = MultMatrizesR(A, B, C, n);
 		
 		arqDir = "data/output/C" + arg + "x" + arg + ".txt";
@@ -101,8 +101,8 @@ int main(int argc, char* argv[]) {
 		writeFile(output, C, n);
 		
 		
-		deleteMatriz(A, n);
-		deleteMatriz(B, n);
+		deleteMatriz<int>(A, n);
+		deleteMatriz<int>(B, n);
 
 		cout << endl;
 	}

@@ -20,6 +20,9 @@ T **AlocMatriz(int n) {
 	} 
 	return matrix;
 }
+
+template int** AlocMatriz<int>(int n);
+
 template<typename T>
 void deleteMatriz(T **v, int n) {
 	for (int i = 0; i < n; i++) {
@@ -27,3 +30,5 @@ void deleteMatriz(T **v, int n) {
 	}
 	delete[] v;
 }
+
+template void deleteMatriz<int>(int **v, int n);
