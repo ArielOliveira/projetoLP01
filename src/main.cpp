@@ -74,13 +74,13 @@ int main(int argc, char* argv[]) {
 		if (!isPowerOfTwo(atoi(argv[i]))) errorInvalidArg();
 	}
 
+	cout << "Carregando arquivos...!" << endl;
+
 	for (int count = 1; count < argc; count++) {
 		
 		int n = atoi(argv[count]);
 		string arg = argv[count];
 		string arqDir;
-
-		cout << "Carregando arquivos...!" << endl;
 		
 		arqDir = "data/input/A" + arg + "x" + arg + ".txt";
 		int **A = performCreation(arqDir, n);
@@ -88,11 +88,8 @@ int main(int argc, char* argv[]) {
 		arqDir = "data/input/B" + arg + "x" + arg + ".txt";
 		int **B = performCreation(arqDir, n);
 
-		cout << "Arquivos carregados com sucesso!" << endl;
-
 		int **C = AlocMatriz(n);
 		C = MultMatrizesR(A, B, C, n);
-		
 		
 		arqDir = "data/output/C" + arg + "x" + arg + ".txt";
 		ofstream output(arqDir);
@@ -105,7 +102,11 @@ int main(int argc, char* argv[]) {
 		
 		deleteMatriz(A, n);
 		deleteMatriz(B, n);
+
+		cout << endl;
 	}
+
+	cout << "Arquivos carregados e escritos com sucesso!" << endl;	
 
 	return 0;
 }

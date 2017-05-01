@@ -32,6 +32,5 @@ void writeFile(ofstream &output, int** v, int n) {
 		}
 		output << endl;
 	}
-	cout << "Arquivo de saída salvo com sucesso!" << endl;
 	output.close();
 }
