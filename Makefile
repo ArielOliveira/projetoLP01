@@ -14,7 +14,7 @@ CC = g++
 
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)/
 
-OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/matriz.o $(OBJ_DIR)/fileHandler.o
+OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/matriz.o $(OBJ_DIR)/fileHandler.o $(OBJ_DIR)/memManager.o
 
 
 RM = rm -rf
@@ -24,14 +24,17 @@ RM = rm -rf
 $(multimat): $(OBJS)
 	$(CC) $^ $(CPPFLAGS) -o $@
 
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
-	$(CC) -c $(CPPFLAGS) $^ -o $@
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp $(INC_DIR)/memManager.h
+	$(CC) -c $(CPPFLAGS) -o $@ $<
 
-$(OBJ_DIR)/matriz.o: $(SRC_DIR)/matriz.cpp $(INC_DIR)/matriz.h
-	$(CC) -c $(CPPFLAGS) $< -o $@
+$(OBJ_DIR)/matriz.o: $(SRC_DIR)/matriz.cpp $(INC_DIR)/matriz.h $(INC_DIR)/memManager.h
+	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 $(OBJ_DIR)/fileHandler.o: $(SRC_DIR)/fileHandler.cpp $(INC_DIR)/fileHandler.h
-	$(CC) -c $(CPPFLAGS) $< -o $@
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+$(OBJ_DIR)/memManager.o: $(SRC_DIR)/memManager.cpp $(INC_DIR)/memManager.h
+	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 dir:
 	mkdir -p bin

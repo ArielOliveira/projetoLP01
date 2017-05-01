@@ -14,6 +14,7 @@ using std::numeric_limits;
 using std::exit;
 
 
+#include "memManager.h"
 #include "fileHandler.h"
 #include "matriz.h"
 
@@ -78,6 +79,8 @@ int main(int argc, char* argv[]) {
 		int n = atoi(argv[count]);
 		string arg = argv[count];
 		string arqDir;
+
+		cout << "Carregando arquivos...!" << endl;
 		
 		arqDir = "data/input/A" + arg + "x" + arg + ".txt";
 		int **A = performCreation(arqDir, n);
@@ -85,8 +88,10 @@ int main(int argc, char* argv[]) {
 		arqDir = "data/input/B" + arg + "x" + arg + ".txt";
 		int **B = performCreation(arqDir, n);
 
+		cout << "Arquivos carregados com sucesso!" << endl;
+
 		int **C = AlocMatriz(n);
-		C = MultMatrizesI(A, B, n);
+		C = MultMatrizesR(A, B, C, n);
 		
 		
 		arqDir = "data/output/C" + arg + "x" + arg + ".txt";
@@ -98,8 +103,8 @@ int main(int argc, char* argv[]) {
 		writeFile(output, C, n);
 		
 		
-		DeleteMatriz(A, n);
-		DeleteMatriz(B, n);
+		deleteMatriz(A, n);
+		deleteMatriz(B, n);
 	}
 
 	return 0;

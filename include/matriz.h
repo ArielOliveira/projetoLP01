@@ -1,9 +1,7 @@
 #ifndef MATRIZ_H
 #define MATRIZ_H
 
-int **AlocMatriz(int n);
-
-void DeleteMatriz(int **v, int n);
+#include "memManager.h"
 
 int **MultMatrizesI(int **M1, int **M2, int m);
 

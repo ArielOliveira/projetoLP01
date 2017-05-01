@@ -22,7 +22,6 @@ void makeMatrix(ifstream &file, int **v, int n) {
 			file.ignore();
 		}
 	}
-	cout << "Arquivo carregado com sucesso!" << endl;
 	file.close();
 }
 
