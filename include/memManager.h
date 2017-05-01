@@ -9,8 +9,10 @@ using std::endl;
 * @param n Tamanho da Matriz Quadrada
 * @return Matriz Alocada
 */
-int **AlocMatriz(int n);
+template<typename T>
+T **AlocMatriz(int n);
 
-void deleteMatriz(int **v, int n);
+template<typename T>
+void deleteMatriz(T **v, int n);
 
 #endif

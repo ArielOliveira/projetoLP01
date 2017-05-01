@@ -18,7 +18,8 @@ using std::exit;
 #include "fileHandler.h"
 #include "matriz.h"
 
-int **performCreation(string &arqDir, int n) {
+template<typename T>
+T **performCreation(string &arqDir, int n) {
 	ifstream file(arqDir);
 		if (!file) {
 			cerr << "Erro ao abrir arquivo" << endl;
@@ -34,7 +35,7 @@ int **performCreation(string &arqDir, int n) {
 	file.seekg(0, file.beg);
 	file.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	int **v = AlocMatriz(n);
+	T **v = AlocMatriz<T>(n);
 	makeMatrix(file, v, n);
 
 	return v;

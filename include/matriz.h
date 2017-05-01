@@ -3,8 +3,10 @@
 
 #include "memManager.h"
 
-int **MultMatrizesI(int **M1, int **M2, int m);
+template<typename T>
+T **MultMatrizesI(T **M1, T **M2, int m);
 
-int **MultMatrizesR(int **M1, int **M2, int **M3, int n);
+template<typename T>
+T **MultMatrizesR(T **M1, T **M2, T **M3, int n);
 
 #endif

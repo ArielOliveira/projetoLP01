@@ -4,14 +4,15 @@
 * @param n Tamanho da Matriz Quadrada
 * @return Matriz Alocada
 */
-int **AlocMatriz(int n) {
-	int **matrix = new int*[n];
+template<typename T>
+T **AlocMatriz(int n) {
+	T **matrix = new T*[n];
 	if (!matrix) {
 		cerr << "Memória insuficiente" << endl;
 		exit(1);
 	}
 	for (int i = 0; i < n; i++) {
-		matrix[i] = new int[n];
+		matrix[i] = new T[n];
 		if (matrix[i] == NULL) {
 				cerr << "Memória insuficiente" << endl;
 				exit(1);
@@ -19,8 +20,8 @@ int **AlocMatriz(int n) {
 	} 
 	return matrix;
 }
-
-void deleteMatriz(int **v, int n) {
+template<typename T>
+void deleteMatriz(T **v, int n) {
 	for (int i = 0; i < n; i++) {
 		delete[] v[i];
 	}
