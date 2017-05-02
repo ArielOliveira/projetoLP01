@@ -53,6 +53,7 @@ doxy:
 	doxygen Doxyfile
 
 clean:
+	$(RM) $(DOC_DIR)/*
 	$(RM) $(OBJ_DIR)/*
 	$(RM) $(BIN_DIR)/*
 	$(RM) $(OUTPUT_DIR)/*

@@ -123,8 +123,6 @@ T **UnirMatriz(T **M, T **M1, T **M2, T **M3, T **M4, int n) {
 	return M;
 }
 
-template int **UnirMatriz<int>(int **M, int **M1, int **M2, int **M3, int **M4, int n);
-
 /** @brief Atribui valores as submatrizes da função recursiva
 * @param M Matriz que possui os valores para as submatrizes
 * @param M1 Submatriz de entrada
@@ -176,8 +174,6 @@ void AtribuirSubM(T **M, T **M1, T **M2, T **M3, T **M4, int n) {
 		b = 0;
 	}
 }
-
-template void AtribuirSubM<int>(int **M, int **M1, int **M2, int **M3, int **M4, int n);
 
 /* @brief Multiplicação recursiva
 * @param M1 Matriz de entrada

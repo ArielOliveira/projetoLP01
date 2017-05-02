@@ -1,0 +1,78 @@
+\hypertarget{memManager_8cpp}{}\section{Referência do Arquivo src/mem\+Manager.cpp}
+\label{memManager_8cpp}\index{src/mem\+Manager.\+cpp@{src/mem\+Manager.\+cpp}}
+
+
+Funções que alocam e desalocam espaços da memória utilizados pelas matrizes  Rodrigo Rocha Moriyama \href{mailto:rodrigo.oi@hotmail.com}{\tt rodrigo.\+oi@hotmail.\+com} \&\& Ariel de Oliveira Corrêa \href{mailto:ariel.oliveira01@gmail.com}{\tt ariel.\+oliveira01@gmail.\+com}  
+
+
+{\ttfamily \#include \char`\"{}mem\+Manager.\+h\char`\"{}}\\*
+Gráfico de dependência de inclusões para mem\+Manager.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{memManager_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \hyperlink{memManager_8cpp_a82312208e9bea6d2b51e4ce4ee7436e5}{Aloc\+Matriz} (int n)
+\begin{DoxyCompactList}\small\item\em Aloca os espaços da matriz dinamicamente. \end{DoxyCompactList}\item 
+template int $\ast$$\ast$ {\bfseries Aloc\+Matriz$<$ int $>$} (int n)\hypertarget{memManager_8cpp_aa10215e720c4894474206659dfde58d6}{}\label{memManager_8cpp_aa10215e720c4894474206659dfde58d6}
+
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{memManager_8cpp_a05e7a5a5adaabbe47ee044a33e137e4f}{delete\+Matriz} (T $\ast$$\ast$v, int n)
+\begin{DoxyCompactList}\small\item\em Desaloca os espaços da matriz. \end{DoxyCompactList}\item 
+template void {\bfseries delete\+Matriz$<$ int $>$} (int $\ast$$\ast$v, int n)\hypertarget{memManager_8cpp_ada2633d6c6343627a9d3f6eb9ebf08ff}{}\label{memManager_8cpp_ada2633d6c6343627a9d3f6eb9ebf08ff}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Funções que alocam e desalocam espaços da memória utilizados pelas matrizes  Rodrigo Rocha Moriyama \href{mailto:rodrigo.oi@hotmail.com}{\tt rodrigo.\+oi@hotmail.\+com} \&\& Ariel de Oliveira Corrêa \href{mailto:ariel.oliveira01@gmail.com}{\tt ariel.\+oliveira01@gmail.\+com} 
+
+\begin{DoxySince}{Desde}
+28/04/2017  01/05/2017 
+\end{DoxySince}
+
+
+\subsection{Funções}
+\index{mem\+Manager.\+cpp@{mem\+Manager.\+cpp}!Aloc\+Matriz@{Aloc\+Matriz}}
+\index{Aloc\+Matriz@{Aloc\+Matriz}!mem\+Manager.\+cpp@{mem\+Manager.\+cpp}}
+\subsubsection[{\texorpdfstring{Aloc\+Matriz(int n)}{AlocMatriz(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$$\ast$ Aloc\+Matriz (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{memManager_8cpp_a82312208e9bea6d2b51e4ce4ee7436e5}{}\label{memManager_8cpp_a82312208e9bea6d2b51e4ce4ee7436e5}
+
+
+Aloca os espaços da matriz dinamicamente. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em n} & Tamanho da Matriz Quadrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Matriz Alocada 
+\end{DoxyReturn}
+\index{mem\+Manager.\+cpp@{mem\+Manager.\+cpp}!delete\+Matriz@{delete\+Matriz}}
+\index{delete\+Matriz@{delete\+Matriz}!mem\+Manager.\+cpp@{mem\+Manager.\+cpp}}
+\subsubsection[{\texorpdfstring{delete\+Matriz(\+T $\ast$$\ast$v, int n)}{deleteMatriz(T **v, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void delete\+Matriz (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{v, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{memManager_8cpp_a05e7a5a5adaabbe47ee044a33e137e4f}{}\label{memManager_8cpp_a05e7a5a5adaabbe47ee044a33e137e4f}
+
+
+Desaloca os espaços da matriz. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em v} & Matriz de entrada \\
+\hline
+{\em n} & Tamanho da matriz \\
+\hline
+\end{DoxyParams}

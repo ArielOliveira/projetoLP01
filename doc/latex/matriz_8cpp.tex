@@ -1,0 +1,184 @@
+\hypertarget{matriz_8cpp}{}\section{Referência do Arquivo src/matriz.cpp}
+\label{matriz_8cpp}\index{src/matriz.\+cpp@{src/matriz.\+cpp}}
+
+
+Programa que faz multiplicações de matrizes e gera estatísticas sobre o tempo de execução  Rodrigo Rocha Moriyama \href{mailto:rodrigo.oi@hotmail.com}{\tt rodrigo.\+oi@hotmail.\+com} \&\& Ariel de Oliveira Corrêa \href{mailto:ariel.oliveira01@gmail.com}{\tt ariel.\+oliveira01@gmail.\+com}  
+
+
+{\ttfamily \#include \char`\"{}matriz.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Gráfico de dependência de inclusões para matriz.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{matriz_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \hyperlink{matriz_8cpp_a029b21745688cbd0dedab53ac5502aba}{SomaM} (T $\ast$$\ast$M1, T $\ast$$\ast$M2, int n)
+\begin{DoxyCompactList}\small\item\em Soma de duas matrizes. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \hyperlink{matriz_8cpp_a9f299c09117aa38830540e142fd7ddd1}{Mult\+MatrizesI} (T $\ast$$\ast$M1, T $\ast$$\ast$M2, int m)
+\begin{DoxyCompactList}\small\item\em Multiplicação interativa das matrizes. \end{DoxyCompactList}\item 
+template int $\ast$$\ast$ {\bfseries Mult\+Matrizes\+I$<$ int $>$} (int $\ast$$\ast$M1, int $\ast$$\ast$M2, int m)\hypertarget{matriz_8cpp_a1021515d786f22ce29385a32991ab922}{}\label{matriz_8cpp_a1021515d786f22ce29385a32991ab922}
+
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \hyperlink{matriz_8cpp_a94f514204154053dfea35221cf8819a3}{Unir\+Matriz} (T $\ast$$\ast$M, T $\ast$$\ast$M1, T $\ast$$\ast$M2, T $\ast$$\ast$M3, T $\ast$$\ast$M4, int n)
+\begin{DoxyCompactList}\small\item\em União das submatrizes em uma única matriz. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{matriz_8cpp_a2c80459ce9105a84612fea4a5072193b}{Atribuir\+SubM} (T $\ast$$\ast$M, T $\ast$$\ast$M1, T $\ast$$\ast$M2, T $\ast$$\ast$M3, T $\ast$$\ast$M4, int n)
+\begin{DoxyCompactList}\small\item\em Atribui valores as submatrizes da função recursiva. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \hyperlink{matriz_8cpp_ab97fd7fa09ee41bcdcc03544fd61af05}{Mult\+MatrizesR} (T $\ast$$\ast$M1, T $\ast$$\ast$M2, T $\ast$$\ast$M3, int n)
+\item 
+template int $\ast$$\ast$ {\bfseries Mult\+Matrizes\+R$<$ int $>$} (int $\ast$$\ast$M1, int $\ast$$\ast$M2, int $\ast$$\ast$M3, int n)\hypertarget{matriz_8cpp_a597872fddb527b6c3d3ec2efbea62b8e}{}\label{matriz_8cpp_a597872fddb527b6c3d3ec2efbea62b8e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Programa que faz multiplicações de matrizes e gera estatísticas sobre o tempo de execução  Rodrigo Rocha Moriyama \href{mailto:rodrigo.oi@hotmail.com}{\tt rodrigo.\+oi@hotmail.\+com} \&\& Ariel de Oliveira Corrêa \href{mailto:ariel.oliveira01@gmail.com}{\tt ariel.\+oliveira01@gmail.\+com} 
+
+Funções interativas e recursivas para a multiplicação das matrizes  Rodrigo Rocha Moriyama \href{mailto:rodrigo.oi@hotmail.com}{\tt rodrigo.\+oi@hotmail.\+com} \&\& Ariel de Oliveira Corrêa \href{mailto:ariel.oliveira01@gmail.com}{\tt ariel.\+oliveira01@gmail.\+com}
+
+\begin{DoxySince}{Desde}
+28/04/2017  01/05/2017 
+\end{DoxySince}
+
+
+\subsection{Funções}
+\index{matriz.\+cpp@{matriz.\+cpp}!Atribuir\+SubM@{Atribuir\+SubM}}
+\index{Atribuir\+SubM@{Atribuir\+SubM}!matriz.\+cpp@{matriz.\+cpp}}
+\subsubsection[{\texorpdfstring{Atribuir\+Sub\+M(\+T $\ast$$\ast$\+M, T $\ast$$\ast$\+M1, T $\ast$$\ast$\+M2, T $\ast$$\ast$\+M3, T $\ast$$\ast$\+M4, int n)}{AtribuirSubM(T **M, T **M1, T **M2, T **M3, T **M4, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Atribuir\+SubM (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{M, }
+\item[{T $\ast$$\ast$}]{M1, }
+\item[{T $\ast$$\ast$}]{M2, }
+\item[{T $\ast$$\ast$}]{M3, }
+\item[{T $\ast$$\ast$}]{M4, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{matriz_8cpp_a2c80459ce9105a84612fea4a5072193b}{}\label{matriz_8cpp_a2c80459ce9105a84612fea4a5072193b}
+
+
+Atribui valores as submatrizes da função recursiva. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M} & Matriz que possui os valores para as submatrizes \\
+\hline
+{\em M1} & Submatriz de entrada \\
+\hline
+{\em M2} & Submatriz de entrada \\
+\hline
+{\em M3} & Submatriz de entrada \\
+\hline
+{\em M4} & Submatriz de entrada \\
+\hline
+{\em n} & Tamanho da matriz \\
+\hline
+\end{DoxyParams}
+\index{matriz.\+cpp@{matriz.\+cpp}!Mult\+MatrizesI@{Mult\+MatrizesI}}
+\index{Mult\+MatrizesI@{Mult\+MatrizesI}!matriz.\+cpp@{matriz.\+cpp}}
+\subsubsection[{\texorpdfstring{Mult\+Matrizes\+I(\+T $\ast$$\ast$\+M1, T $\ast$$\ast$\+M2, int m)}{MultMatrizesI(T **M1, T **M2, int m)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$$\ast$ Mult\+MatrizesI (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{M1, }
+\item[{T $\ast$$\ast$}]{M2, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)}\hypertarget{matriz_8cpp_a9f299c09117aa38830540e142fd7ddd1}{}\label{matriz_8cpp_a9f299c09117aa38830540e142fd7ddd1}
+
+
+Multiplicação interativa das matrizes. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M1} & Matriz de entrada \\
+\hline
+{\em M2} & Matriz de entrada \\
+\hline
+{\em m} & Tamanho das matrizes de entrada \\
+\hline
+{\em M3} & Matriz para resultado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Matriz resultante da multiplicação 
+\end{DoxyReturn}
+\index{matriz.\+cpp@{matriz.\+cpp}!Mult\+MatrizesR@{Mult\+MatrizesR}}
+\index{Mult\+MatrizesR@{Mult\+MatrizesR}!matriz.\+cpp@{matriz.\+cpp}}
+\subsubsection[{\texorpdfstring{Mult\+Matrizes\+R(\+T $\ast$$\ast$\+M1, T $\ast$$\ast$\+M2, T $\ast$$\ast$\+M3, int n)}{MultMatrizesR(T **M1, T **M2, T **M3, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$$\ast$ Mult\+MatrizesR (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{M1, }
+\item[{T $\ast$$\ast$}]{M2, }
+\item[{T $\ast$$\ast$}]{M3, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{matriz_8cpp_ab97fd7fa09ee41bcdcc03544fd61af05}{}\label{matriz_8cpp_ab97fd7fa09ee41bcdcc03544fd61af05}
+Sub matrizes de M1
+
+Sub matrizes de M2
+
+Sub matrizes de M3
+
+Matriz auxiliar para armazenar a multiplicação
+
+Atribuição dos valores nas submatrizes de M3 \index{matriz.\+cpp@{matriz.\+cpp}!SomaM@{SomaM}}
+\index{SomaM@{SomaM}!matriz.\+cpp@{matriz.\+cpp}}
+\subsubsection[{\texorpdfstring{Soma\+M(\+T $\ast$$\ast$\+M1, T $\ast$$\ast$\+M2, int n)}{SomaM(T **M1, T **M2, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$$\ast$ SomaM (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{M1, }
+\item[{T $\ast$$\ast$}]{M2, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{matriz_8cpp_a029b21745688cbd0dedab53ac5502aba}{}\label{matriz_8cpp_a029b21745688cbd0dedab53ac5502aba}
+
+
+Soma de duas matrizes. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M1} & Matriz de entrada \\
+\hline
+{\em M2} & Matriz de entrada \\
+\hline
+{\em n} & Tamanho das matrizes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Matriz resultante da soma 
+\end{DoxyReturn}
+\index{matriz.\+cpp@{matriz.\+cpp}!Unir\+Matriz@{Unir\+Matriz}}
+\index{Unir\+Matriz@{Unir\+Matriz}!matriz.\+cpp@{matriz.\+cpp}}
+\subsubsection[{\texorpdfstring{Unir\+Matriz(\+T $\ast$$\ast$\+M, T $\ast$$\ast$\+M1, T $\ast$$\ast$\+M2, T $\ast$$\ast$\+M3, T $\ast$$\ast$\+M4, int n)}{UnirMatriz(T **M, T **M1, T **M2, T **M3, T **M4, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$$\ast$ Unir\+Matriz (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{M, }
+\item[{T $\ast$$\ast$}]{M1, }
+\item[{T $\ast$$\ast$}]{M2, }
+\item[{T $\ast$$\ast$}]{M3, }
+\item[{T $\ast$$\ast$}]{M4, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{matriz_8cpp_a94f514204154053dfea35221cf8819a3}{}\label{matriz_8cpp_a94f514204154053dfea35221cf8819a3}
+
+
+União das submatrizes em uma única matriz. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em M} & Matriz que irá receber as submatrizes \\
+\hline
+{\em M1} & Submatriz de entrada \\
+\hline
+{\em M2} & Submatriz de entrada \\
+\hline
+{\em M3} & Submatriz de entrada \\
+\hline
+{\em M4} & Submatriz de entrada \\
+\hline
+{\em n} & Tamanho das submatrizes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Matriz resultante da união 
+\end{DoxyReturn}
